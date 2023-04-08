@@ -7,7 +7,7 @@ function setup() {
 
 function draw() {
   //sneller als pijltje omlaag is ingeklikt
-  if (keyIsDown(DOWN_ARROW)) {
+  if (keyIsDown(DOWN_ARROW) || keyIsDown(83)) {
     speed = 5;
   }
 
@@ -192,7 +192,7 @@ for (let i = 0; i < 100; i++) {
 
 
 function keyPressed() {
-  if (keyCode === LEFT_ARROW) {
+  if (keyCode === LEFT_ARROW || keyCode === 65) {
     rood = []
     verplaatst = []
 
@@ -217,7 +217,7 @@ function keyPressed() {
    }
   }
   }
-  else if (keyCode === RIGHT_ARROW) {
+  else if (keyCode === RIGHT_ARROW || keyCode === 68) {
     rood = []
     verplaatst = []
 
@@ -241,7 +241,7 @@ function keyPressed() {
   }
   }
  }
-    else if (keyCode === UP_ARROW) {
+    else if (keyCode === UP_ARROW || keyCode === 87) {
     rood = []
     coords = []
     iets = []
