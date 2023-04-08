@@ -15,8 +15,40 @@
         </div>
 
         <div class="tetris">
-            <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script> 
-            <script src="/website/projects/tetris/tetris.js" class="chess"></script>
+            
+            
+        </div>
+
+        <div id="follower">
+            <script>
+                document.addEventListener("mousemove", function(event) {
+
+                    mousex = event.pageX
+                    mousey = event.pageY
+                });
+                setInterval(function followmouse() {
+                    var follower = document.getElementById("follower");
+                    // Update the position of the follower element to follow the cursor
+                    speed = 2;
+                    differencex = 0;
+                    differencey = 0;
+                    differencex = mousex - follower.offsetLeft;
+                    differencey = mousey - follower.offsetTop;
+                    console.log(mousex)
+                    console.log(differencex,differencey)
+                    distance = Math.sqrt(differencex**2 + differencey**2);
+                    amountofsteps = distance/speed;
+                    newpositionx = follower.offsetLeft + differencex/amountofsteps;
+                    newpositiony = follower.offsetTop + differencey/amountofsteps;
+                    console.log(newpositionx);
+                    follower.style.left = (newpositionx) + "px"; // Subtracting an offset to center the element
+                    follower.style.top = (newpositiony) + "px"; // Subtracting an offset to center the element
+                    
+                }, 25);
+                
+                
+            </script>
+            <p> lskdjflskjdf </p>
         </div>
     </body>
 </html>
